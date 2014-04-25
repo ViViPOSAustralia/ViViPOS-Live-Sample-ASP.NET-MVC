@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ViViPOSLive_Sample_AspNet.Models.Product>
+
+<div class="jumbotron">
+    <h1>ViViPOS Live</h1>
+    <p class="lead">ViViPOS Live is a cloud based API that connects third party applications to ViViPOS Terminals.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Products</h2>
+        <p>
+            @if (Model == null)
+            {
+                @ViewBag.ErrorMessage;
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    @Html.DisplayFor(modelItem => item.Name);
+                }
+            }
+        </p>
+    </div>
+</div>
